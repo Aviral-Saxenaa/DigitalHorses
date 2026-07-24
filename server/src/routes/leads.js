@@ -5,10 +5,12 @@ const { logActivity } = require('../middleware/activity');
 
 const router = express.Router();
 
-router.post('/', authenticate, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const lead = await Lead.create(req.body);
-    await logActivity(lead.id, req.user.id, 'created', 'Lead created');
+    if (req.user) {
+      await logActivity(lead.id, req.user.id, 'created', 'Lead created');
+    }
     res.status(201).json(lead);
   } catch (err) {
     res.status(500).json({ error: err.message });
