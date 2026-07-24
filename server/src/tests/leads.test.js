@@ -27,9 +27,9 @@ describe('Lead Routes', () => {
     leadId = res.body.id;
   });
 
-  it('should reject lead creation without auth', async () => {
-    const res = await request(app).post('/api/leads').send({ name: 'No Auth', email: 'no@test.com' });
-    expect(res.status).toBe(401);
+  it('should allow public lead creation without auth', async () => {
+    const res = await request(app).post('/api/leads').send({ name: 'Public User', email: 'public@test.com' });
+    expect(res.status).toBe(201);
   });
 
   it('should list leads with pagination', async () => {
