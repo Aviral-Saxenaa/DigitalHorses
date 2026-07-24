@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "jest --forceExit --detectOpenHandles"
+    "test": "node -e \"try { require('fs').unlinkSync('./database.sqlite') } catch(e) {}\" && jest --runInBand --forceExit --detectOpenHandles"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
