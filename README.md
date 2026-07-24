@@ -2,6 +2,8 @@
 
 A full-stack lead management application built with Express, React, Node.js, and SQLite.
 
+**Live URL:** https://digitalhorses-production.up.railway.app
+
 Built for [Digital Heroes Training Task](https://digitalheroesco.com)
 
 ## Features
