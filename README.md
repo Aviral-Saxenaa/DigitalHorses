@@ -147,9 +147,7 @@ Tests cover:
 4. Set environment variables: `JWT_SECRET`, `PORT`
 5. Add `--static-dir` to serve the built React app from Express
 
-## Credentials (Testing)
-
-Register at `/register` to create accounts. First user will be member; set role to admin via direct DB manipulation or register with `"role": "admin"`.
+> ⚠️ **READ THE EXAMPLE CAREFULLY** — `john@test.com`, `jane@test.com` etc. are just JSON **examples** in the API docs above. They are NOT pre-created users. You must **register first** at `/register` before you can login.
 
 ---
 
