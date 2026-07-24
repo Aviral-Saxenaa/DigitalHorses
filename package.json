@@ -4,7 +4,7 @@
   "description": "Lead management platform - Built for Digital Heroes Training Task",
   "scripts": {
     "server": "cd server && npm start",
-    "client": "cd client && npm start",
+    "client": "cd client && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "install-all": "npm install && cd server && npm install && cd ../client && npm install",
     "test": "cd server && npm test"
