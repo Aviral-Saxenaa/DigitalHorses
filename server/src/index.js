@@ -29,6 +29,14 @@ app.get('/api', (req, res) => {
   res.json({ message: 'DigitalHorses API', docs: '/api/docs' });
 });
 
+const clientBuild = path.join(__dirname, '..', '..', 'client', 'dist');
+if (fs.existsSync(clientBuild)) {
+  app.use(express.static(clientBuild));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(clientBuild, 'index.html'));
+  });
+}
+
 if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
