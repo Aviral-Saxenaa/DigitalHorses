@@ -25,7 +25,7 @@ router.get('/', authenticate, async (req, res) => {
       page: parseInt(page) || 1,
       limit: parseInt(limit) || 10,
       status,
-      assigned_to: isMember ? req.user.id : assigned_to,
+      assigned_to: assigned_to || undefined,
       search
     });
     res.json(result);
